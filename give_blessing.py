@@ -9,7 +9,7 @@ def blessing_window(new_artifacts):
         artifact_text = artifact_text + "Level" + str(x["level"]) + " " + x["Set"] + " " + x["slot"] + "\n"
         artifact_text = artifact_text + x["main stat"] + " main stat \n"
         artifact_text = artifact_text + x["substat1"] + "\n" + x["substat2"] + "\n" + x["substat3"] + "\n" + x[
-            "substat1"] + "\n "
+            "substat4"] + "\n "
         artifact_text = artifact_text + "\n"
     sg.popup_scrolled(artifact_text)
 

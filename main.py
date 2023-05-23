@@ -2,6 +2,7 @@ import inventory
 import setData
 import give_blessing
 import PySimpleGUI as sg
+import shop
 
 weapons = []
 characters = []
@@ -46,6 +47,8 @@ while True:  # Event Loop
         give_blessing.weapon_blessing(weapons, weapons_inv, characters_inv, artifacts_inv, money, rerolls)
         window['floor'].update(current_floor)
         window['money'].update(money[0])
+        if current_floor == 4 or current_floor == 8 or current_floor == 11:
+            shop.start_shop(artifacts, characters, weapons, artifacts_inv, characters_inv, weapons_inv, money, rerolls)
     if event == 'Characters':
         inventory.show_characters(characters_inv)
     if event == 'Artifacts':

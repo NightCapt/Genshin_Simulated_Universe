@@ -5,7 +5,6 @@ import give_blessing
 import PySimpleGUI as sg
 
 
-
 def start_shop(artifacts, characters, weapons, artifacts_inv, characters_inv, weapons_inv, money, rerolls):
     cost = 20
     cost_blessing = 30
@@ -216,14 +215,14 @@ def start_shop(artifacts, characters, weapons, artifacts_inv, characters_inv, we
             window['EM Hat'].update(disabled=True)
 
         if event == "Character Blessing":
-            give_blessing.character_blessing(characters,characters_inv,artifacts_inv,weapons_inv,money,rerolls)
-            money[0] = money[0]-30
+            give_blessing.character_blessing(characters, characters_inv, artifacts_inv, weapons_inv, money, rerolls)
+            money[0] = money[0] - 30
             window['Character Blessing'].update(disabled=True)
             window['money'].update(money[0])
 
         if event == "Weapon Blessing":
-            give_blessing.character_blessing(characters,characters_inv,artifacts_inv,weapons_inv,money,rerolls)
-            money[0] = money[0]-30
+            give_blessing.weapon_blessing(weapons, weapons_inv, characters_inv, artifacts_inv, money, rerolls)
+            money[0] = money[0] - 30
             window['Weapon Blessing'].update(disabled=True)
             window['money'].update(money[0])
         if event == 'Characters':

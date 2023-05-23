@@ -61,7 +61,7 @@ def dataset(weapons, artifacts, characters):
 
     for i in data['characters']:
 
-        if i["level"] > 59:
+        if i["level"] > 59 and not i["key"] == "TravelerDendro" and not i["key"] == "TravelerElectro" and not i["key"] == "TravelerAnemo" and not i["key"] == "TravelerGeo":
             newCharacter = {
                 "name": i["key"],
                 "element": "hydro",

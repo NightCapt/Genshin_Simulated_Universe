@@ -8,6 +8,8 @@
  
  Do note that this project is still work in progress, and I am planning to add events/relics/optional challenges for more blessings, as well as visual updates. However, it is playable as is, and hopefully fun.
  
+ Here's a showcase of the program in action: https://youtu.be/d-ItpqawMn4
+ 
  # Setting up and getting Character data
 
 The Genshin data file is using NightCapt's genshin impact data, make sure to replace it with your own character by "Load Genshin data" data button before playing.

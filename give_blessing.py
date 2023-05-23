@@ -53,7 +53,15 @@ def artifact_blessing(artifacts, artifact_inv, weapons_inv, characters_inv, mone
                 if i["Set"] == blessing_list[0]:
                     this_set.append(i)
 
-            new_artifacts = random.sample(this_set, k=3)
+            try:
+                new_artifacts = random.sample(this_set, k=3)
+            except:
+                try:
+                    new_artifacts = random.sample(this_set, k=2)
+                    new_artifacts.append(random.choice(artifacts))
+                except:
+                    new_artifacts = random.choice(this_set)
+                    new_artifacts.append(random.sample(artifacts, k=2))
             blessing_window(new_artifacts)
 
             artifact_inv.append(new_artifacts[0])

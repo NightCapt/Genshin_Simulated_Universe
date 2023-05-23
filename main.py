@@ -1,8 +1,11 @@
+import sys
+
 import inventory
 import setData
 import give_blessing
 import PySimpleGUI as sg
 import shop
+import load_genshin_data
 
 weapons = []
 characters = []
@@ -19,9 +22,16 @@ characters_inv = [traveler]
 artifacts_inv = []
 rerolls = 1
 
-setData.dataset(weapons, artifacts, characters)
+while True:
+    try:
+        setData.dataset(weapons, artifacts, characters)
+        break
+    except:
+        sg.popup("Genshin data file is not compatible. Check README for importing Genshin data")
+        load_genshin_data.data_window()
 
-layout = [[sg.Text('Current Floor:'), sg.Text(size=(15, 1), key='floor')],
+layout = [[sg.Button('Load Genshin Data'), sg.Button('Reset to floor 1')],
+          [sg.Text('Current Floor:'), sg.Text(size=(15, 1), key='floor')],
           [sg.Text('Current Currency:'), sg.Text(size=(15, 1), key='money')],
           [sg.Button('Cleared Floor')],
           [sg.Button('Artifacts'), sg.Button('Weapons'), sg.Button('Characters')]]
@@ -55,5 +65,32 @@ while True:  # Event Loop
         inventory.show_artifacts(artifacts_inv)
     if event == 'Weapons':
         inventory.show_weapons(weapons_inv)
+    if event == 'Load Genshin Data':
+        load_genshin_data.data_window()
+    if event == 'Reset to floor 1':
+        weapons = []
+        characters = []
+        traveler = {
+            "name": "Traveler",
+            "element": "your choice",
+            "weapon": "sword"
+        }
+
+        artifacts = []
+
+        weapons_inv = []
+        characters_inv = [traveler]
+        artifacts_inv = []
+        rerolls = 1
+
+        while True:
+            try:
+                setData.dataset(weapons, artifacts, characters)
+                break
+            except:
+                sg.popup("Genshin data file is not compatible. Check README for importing Genshin data")
+                load_genshin_data.data_window()
+        window['floor'].update(current_floor)
+        window['money'].update(money[0])
 
 window.close()

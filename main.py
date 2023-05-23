@@ -47,7 +47,7 @@ while True:  # Event Loop
         give_blessing.weapon_blessing(weapons, weapons_inv, characters_inv, artifacts_inv, money, rerolls)
         window['floor'].update(current_floor)
         window['money'].update(money[0])
-        if current_floor == 4 or current_floor == 8 or current_floor == 11:
+        if current_floor == 5 or current_floor == 9 or current_floor == 12:
             shop.start_shop(artifacts, characters, weapons, artifacts_inv, characters_inv, weapons_inv, money, rerolls)
     if event == 'Characters':
         inventory.show_characters(characters_inv)

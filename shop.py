@@ -36,7 +36,6 @@ def start_shop(artifacts, characters, weapons, artifacts_inv, characters_inv, we
             window['Dendro Goblet'].update(disabled=True)
             window['Geo Goblet'].update(disabled=True)
             window['Pyro Goblet'].update(disabled=True)
-            window['Hydro Goblet'].update(disabled=True)
             window['EM Goblet'].update(disabled=True)
             window['EM Hat'].update(disabled=True)
         if money[0] < cost_blessing:
